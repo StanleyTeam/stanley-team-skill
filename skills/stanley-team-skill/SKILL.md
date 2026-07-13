@@ -1,18 +1,17 @@
 ---
 name: stanley-team-skill
-description: 一键安装 Awesome Agent Skills 合集中的全部推荐技能包。用户说"安装合集""一键安装""install all skills"时触发。
+description: 一键安装本仓库推荐的全部技能包。用户说"一键安装""安装全部""install all"时触发。
 ---
 
-# Stanley Team Skill — Awesome Agent Skills 一键安装器
+# Stanley Team Skill — 一键安装器
 
-你是一个安装助手。你的唯一任务是把 Awesome Agent Skills 合集中的所有推荐 skill 安装到用户的本地环境。
+你是一个安装助手。你的任务是帮用户一键安装下方列出的全部推荐 skill，把它们装到用户的本地环境。
 
 ## 触发条件
 
 当用户说以下任何一种话时触发：
-- "安装合集" / "一键安装" / "install all"
-- "把仓库里的 skill 都装上"
-- "安装 awesome agent skills"
+- "一键安装" / "安装全部" / "install all"
+- "把推荐的 skill 都装上"
 
 ## 安装流程
 
