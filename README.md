@@ -46,7 +46,7 @@ AI Agent Skills 是 2025 年下半年兴起的新范式：用一份声明式的 
 
 ## 平台与工具
 
-这些是支持 Agent Skills 机制的平台：
+以下是目前已知支持 Agent Skills 机制的平台（列表不完整，持续更新中）：
 
 | 平台 | Skills 目录 | 说明 |
 |------|------------|------|
@@ -54,6 +54,9 @@ AI Agent Skills 是 2025 年下半年兴起的新范式：用一份声明式的 
 | OpenAI Codex | `~/.codex/skills/` | OpenAI 的编程 Agent |
 | WorkBuddy (CodeBuddy) | `~/.workbuddy/skills/` | AI 编程助手，支持用户级和项目级 skill |
 | Cursor | `.cursor/skills/` | AI 代码编辑器 |
+| Gemini CLI | `~/.gemini/skills/` | Google 的命令行 AI 编程助手 |
+
+> 知道其他支持 Skills 的平台？欢迎补充，提 PR 或 Issue。
 
 ### Skills 的基本结构
 
