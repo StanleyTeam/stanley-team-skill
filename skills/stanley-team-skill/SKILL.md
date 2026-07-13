@@ -41,28 +41,28 @@ ls ~/.gemini/skills/ 2>/dev/null && echo "GEMINI_FOUND"
 
 ```bash
 # 1. jcm-skill — 文章写作辅助
-npx -y skills add jinchenma94/jcm-skill -g
+npx -y skills add jinchenma94/jcm-skill --all
 
 # 2. snail-biaoti-public — 标题生成与评分
-npx -y skills add dulala567/snail-biaoti-public -g
+npx -y skills add dulala567/snail-biaoti-public --all
 
 # 3. Punk-Skill — 封面图与头像生成
-npx -y skills add adrianpunk/Punk-Skill -g
+npx -y skills add adrianpunk/Punk-Skill --all
 
 # 4. Mting-skill — 学习复盘与输出
-npx -y skills add mting0308-ux/Mting-skill -g
+npx -y skills add mting0308-ux/Mting-skill --all
 
 # 5. xiaomu_x_creator — X/Twitter 运营工具箱
-npx -y skills add JayceHuang/xiaomu_x_creator -g
+npx -y skills add JayceHuang/xiaomu_x_creator --all
 
 # 6. rw-research-skill — 科研全流程
-npx -y skills add rolandwonglonam/rw-research-skill -g
+npx -y skills add rolandwonglonam/rw-research-skill --all
 
 # 7. ssoier-cpp-solution — 信奥题解生成器
-npx -y skills add xiaoxihahaha/ssoier-cpp-solution -g
+npx -y skills add xiaoxihahaha/ssoier-cpp-solution --all
 
 # 8. codex-orange-block-pet — 橙色方块桌宠
-npx -y skills add GaryLauLGY/codex-orange-block-pet -g
+npx -y skills add GaryLauLGY/codex-orange-block-pet --all
 ```
 
 ### 第 3 步：逐个确认
