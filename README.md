@@ -2,7 +2,7 @@
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-> 精选的 AI Agent Skills（智能体技能包）合集。覆盖内容创作、社交媒体增长、科研学术、教育竞赛和个性化工具等方向。
+> 精选的 AI Agent Skills（智能体技能包）合集。覆盖内容创作、社交媒体增长、科研学术、教育竞赛、个性化工具和效率提升等方向。
 
 AI Agent Skills 是 2025 年下半年兴起的新范式：用一份声明式的 SKILL.md 文件，教会 Claude Code、OpenAI Codex、Cursor、WorkBuddy(CodeBuddy) 等 AI 编程助手新的能力。这个合集收录社区里真正好用、值得安装的技能包。
 
@@ -24,6 +24,7 @@ AI Agent Skills 是 2025 年下半年兴起的新范式：用一份声明式的 
 - [jcm-skill](https://github.com/jinchenma94/jcm-skill#readme) - 文章写作辅助 skill，从素材整理、大纲协作到初稿质检的全流程。
 - [snail-biaoti-public](https://github.com/dulala567/snail-biaoti-public#readme) - 中文标题生成与评分系统，支持微信公众号、小红书、X、LinkedIn 多平台改写。
 - [Punk-Skill](https://github.com/adrianpunk/Punk-Skill#readme) - 视觉生成 skill，把文章转成封面图、把照片转成风格化头像。内置 20+ 种封面风格和 5 种头像风格。
+- [Mting-skill](https://github.com/mting0308-ux/Mting-skill#readme) - 学习复盘与输出 skill，把视频、文字稿、字幕等学习材料变成知识点复盘、行动清单、X 短推草稿和配图方案。
 
 ## 社交媒体增长
 
