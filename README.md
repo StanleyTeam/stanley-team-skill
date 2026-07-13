@@ -13,18 +13,7 @@ AI Agent Skills 是 2025 年下半年兴起的新范式：用一份声明式的 
 ### 第一步：安装本仓库
 
 ```bash
-npx -y skills add StanleyTeam/stanley-team-skill --all --copy
-```
-
-> `--all --copy` 会自动检测你机器上安装了哪些 AI Agent，把 skill 复制到各自目录。Windows 用户必须加 `--copy`（否则用 symlink 会静默失败）。
-
-**如果你用的平台不在自动安装列表里**（比如 Codex、WorkBuddy），手动补一下：
-
-```bash
-git clone https://github.com/StanleyTeam/stanley-team-skill.git /tmp/stanley-skill
-cp -R /tmp/stanley-skill/skills/stanley-team-skill ~/.codex/skills/        # Codex
-cp -R /tmp/stanley-skill/skills/stanley-team-skill ~/.workbuddy/skills/    # WorkBuddy
-rm -rf /tmp/stanley-skill
+npx -y skills add StanleyTeam/stanley-team-skill -g
 ```
 
 ### 第二步：触发安装

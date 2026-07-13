@@ -37,40 +37,32 @@ ls ~/.agents/skills/ 2>/dev/null && echo "AGENTS_FOUND"
 
 ### 第 2 步：逐个安装
 
-对以下 **8 个 skill** 依次安装。用 `npx skills add --all --copy`：
+对以下 **8 个 skill** 依次安装。用 `npx skills add -g`：
 
 ```bash
 # 1. jcm-skill — 文章写作辅助
-npx -y skills add jinchenma94/jcm-skill --all --copy
+npx -y skills add jinchenma94/jcm-skill -g
 
 # 2. snail-biaoti-public — 标题生成与评分
-npx -y skills add dulala567/snail-biaoti-public --all --copy
+npx -y skills add dulala567/snail-biaoti-public -g
 
 # 3. Punk-Skill — 封面图与头像生成
-npx -y skills add adrianpunk/Punk-Skill --all --copy
+npx -y skills add adrianpunk/Punk-Skill -g
 
 # 4. Mting-skill — 学习复盘与输出
-npx -y skills add mting0308-ux/Mting-skill --all --copy
+npx -y skills add mting0308-ux/Mting-skill -g
 
 # 5. xiaomu_x_creator — X/Twitter 运营工具箱
-npx -y skills add JayceHuang/xiaomu_x_creator --all --copy
+npx -y skills add JayceHuang/xiaomu_x_creator -g
 
 # 6. rw-research-skill — 科研全流程
-npx -y skills add rolandwonglonam/rw-research-skill --all --copy
+npx -y skills add rolandwonglonam/rw-research-skill -g
 
 # 7. ssoier-cpp-solution — 信奥题解生成器
-npx -y skills add xiaoxihahaha/ssoier-cpp-solution --all --copy
+npx -y skills add xiaoxihahaha/ssoier-cpp-solution -g
 
 # 8. codex-orange-block-pet — 橙色方块桌宠
-npx -y skills add GaryLauLGY/codex-orange-block-pet --all --copy
-```
-
-**重要：npx 可能不会装到所有平台目录**（比如 Codex 的 `~/.codex/skills/` 和 WorkBuddy 的 `~/.workbuddy/skills/` 可能不在自动列表里）。安装完 npx 后，检查第 1 步检测到的目标目录里有没有这些 skill。如果没有，用 git clone 补装：
-
-```bash
-git clone https://github.com/{作者}/{仓库}.git /tmp/{仓库名}
-cp -R /tmp/{仓库名}/skills/* {TARGET_DIR}/
-rm -rf /tmp/{仓库名}
+npx -y skills add GaryLauLGY/codex-orange-block-pet -g
 ```
 
 8 个 skill 的仓库地址：
@@ -111,14 +103,12 @@ rm -rf /tmp/{仓库名}
 假设检测到目标目录是 `~/.codex/skills/`，安装 jcm-skill 的完整命令：
 
 ```bash
-git clone https://github.com/jinchenma94/jcm-skill.git /tmp/jcm-skill
-cp -R /tmp/jcm-skill/skills/* ~/.codex/skills/
-rm -rf /tmp/jcm-skill
+npx -y skills add jinchenma94/jcm-skill -g
 ```
 
 ## 注意事项
 
-- 不要用 `npx skills add` 安装——它不认识所有平台目录，可能装错位置。
+- 用 `npx -y skills add {作者}/{仓库} -g` 逐个安装。
 - 一定要先检测目录再安装，不要猜平台。
 - Windows 用户用 `cp -R` 时可能需要用 Git Bash 或 WSL。
-- 如果 clone 失败，检查网络连接。
+- 如果 npx 安装失败，检查网络连接。
