@@ -6,40 +6,6 @@
 
 AI Agent Skills 是 2025 年下半年兴起的新范式：用一份声明式的 SKILL.md 文件，教会 AI 助手新的能力。这个合集收录社区里真正好用、值得安装的技能包。
 
-## 🚀 一键安装全部 Skill
-
-本仓库自带一个安装器 skill（`stanley-team-skill`）。安装它之后，对 AI Agent 说一句**"Stanley install"**，它会自动把全部 8 个推荐 skill 依次装到你的本地环境。
-
-### 第一步：安装本仓库
-
-```bash
-npx -y skills add StanleyTeam/stanley-team-skill -g --all --copy
-```
-
-> 如果你在用 **Codex** 或 **WorkBuddy**，上面的命令不会自动装到它们的目录，需要手动补一步：
-
-```bash
-# Codex
-cp -R ~/.agents/skills/stanley-team-skill ~/.codex/skills/
-
-# WorkBuddy
-cp -R ~/.agents/skills/stanley-team-skill ~/.workbuddy/skills/
-```
-
-### 第二步：触发安装
-
-重启你的 AI Agent，然后对它说：
-
-```
-Stanley install
-```
-
-它会自动检测你的平台、逐个安装 8 个 skill、并汇报结果。
-
----
-
-不想一键装？也可以逐个手动安装，见下方清单。
-
 ---
 
 ## 目录
