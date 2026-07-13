@@ -11,8 +11,8 @@ AI Agent Skills 是 2025 年下半年兴起的新范式：用一份声明式的 
 本仓库自带一个安装器 skill（`stanley-team-skill`）。安装它之后，对 AI Agent 说一句**"一键安装合集"**，它会自动把全部 8 个推荐 skill 依次装到你的本地环境。
 
 ```bash
-# 先安装本仓库（把 <仓库所有者> 替换为实际用户名）
-npx -y skills add <仓库所有者>/stanley-team-skill -g
+# 先安装本仓库
+npx -y skills add StanleyTeam/stanley-team-skill -g
 
 # 然后在 AI Agent 里说："一键安装"
 ```
