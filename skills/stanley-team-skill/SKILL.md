@@ -1,6 +1,6 @@
 ---
 name: stanley-team-skill
-description: 一键安装本仓库推荐的全部技能包。用户说"一键安装""安装全部""install all"时触发。
+description: "One-click installer for all recommended skills. Triggered when user says: install all, yi jian an zhuang, an zhuang quan bu."
 ---
 
 # Stanley Team Skill — 一键安装器
