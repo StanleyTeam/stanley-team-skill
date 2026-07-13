@@ -8,16 +8,37 @@ AI Agent Skills 是 2025 年下半年兴起的新范式：用一份声明式的 
 
 ## 🚀 一键安装全部 Skill
 
-本仓库自带一个安装器 skill（`stanley-team-skill`）。安装它之后，对 AI Agent 说一句**"一键安装合集"**，它会自动把全部 8 个推荐 skill 依次装到你的本地环境。
+本仓库自带一个安装器 skill（`stanley-team-skill`）。安装它之后，对 AI Agent 说一句**"Stanley install"**，它会自动把全部 8 个推荐 skill 依次装到你的本地环境。
+
+### 第一步：安装本仓库
+
+把本仓库 clone 到本地，然后复制 `stanley-team-skill` 到你使用的 AI Agent 的 skills 目录：
 
 ```bash
-# 先安装本仓库（自动检测你的 AI Agent 并安装到对应目录）
-npx -y skills add StanleyTeam/stanley-team-skill --all
+git clone https://github.com/StanleyTeam/stanley-team-skill.git /tmp/stanley-skill
 
-# 然后在 AI Agent 里说："Stanley install"
+# 复制到你用的平台（选一个）
+cp -R /tmp/stanley-skill/skills/stanley-team-skill ~/.codex/skills/          # Codex
+cp -R /tmp/stanley-skill/skills/stanley-team-skill ~/.workbuddy/skills/      # WorkBuddy
+cp -R /tmp/stanley-skill/skills/stanley-team-skill ~/.claude/skills/         # Claude Code
+cp -R /tmp/stanley-skill/skills/stanley-team-skill ~/.gemini/skills/         # Gemini CLI
+
+rm -rf /tmp/stanley-skill
 ```
 
-不想一键装？也可以逐个安装，见下方清单。
+### 第二步：触发安装
+
+重启你的 AI Agent，然后对它说：
+
+```
+Stanley install
+```
+
+它会自动检测你的平台、逐个安装 8 个 skill、并汇报结果。
+
+---
+
+不想一键装？也可以逐个手动安装，见下方清单。
 
 ---
 

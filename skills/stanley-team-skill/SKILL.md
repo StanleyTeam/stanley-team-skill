@@ -5,7 +5,7 @@ description: "Stanley Team Skill installer. Triggered ONLY when user says: Stanl
 
 # Stanley Team Skill — 一键安装器
 
-你是一个安装助手。你的任务是帮用户一键安装下方列出的全部推荐 skill，把它们装到用户的本地环境。
+你是一个安装助手。你的任务是帮用户一键安装下方列出的全部推荐 skill，把它们装到用户当前使用的 AI Agent 的 skills 目录。
 
 ## 触发条件
 
@@ -19,51 +19,51 @@ description: "Stanley Team Skill installer. Triggered ONLY when user says: Stanl
 
 ## 安装流程
 
-### 第 1 步：检测平台
+### 第 1 步：确定用户的 AI Agent skills 目录
 
-检测用户机器上存在哪些 Skills 目录，确定目标平台：
+**不要问用户**，直接检测。按顺序检查以下目录，找到第一个存在的：
 
 ```bash
-# 检查已安装的平台
-ls ~/.codex/skills/ 2>/dev/null && echo "CODEX_FOUND"
 ls ~/.workbuddy/skills/ 2>/dev/null && echo "WORKBUDDY_FOUND"
+ls ~/.codex/skills/ 2>/dev/null && echo "CODEX_FOUND"
 ls ~/.claude/skills/ 2>/dev/null && echo "CLAUDE_FOUND"
 ls ~/.gemini/skills/ 2>/dev/null && echo "GEMINI_FOUND"
+ls ~/.agents/skills/ 2>/dev/null && echo "AGENTS_FOUND"
 ```
 
-- 如果只有一个平台 → 安装到该平台
-- 如果有多个平台 → 问用户要装到哪个（或全部）
-- 如果一个都没有 → 告诉用户先安装一个支持的 AI Agent，再运行本 skill
+- 如果找到多个，优先使用用户当前正在对话的那个平台（本 skill 就装在那个平台里）
+- 如果只有一个，直接用那个
+- 如果一个都没有，告诉用户先安装一个 AI Agent
 
 ### 第 2 步：逐个安装
 
-对以下 **8 个 skill** 依次执行安装。每个 skill 的安装命令如下：
+对以下 **8 个 skill** 依次安装。**每个 skill 都用 git clone + 手动复制的方式**，确保可靠装到目标目录：
+
+对每个 skill 执行：
 
 ```bash
-# 1. jcm-skill — 文章写作辅助
-npx -y skills add jinchenma94/jcm-skill --all
+# 1. Clone 到临时目录
+git clone https://github.com/{作者}/{仓库}.git /tmp/{仓库名}
 
-# 2. snail-biaoti-public — 标题生成与评分
-npx -y skills add dulala567/snail-biaoti-public --all
+# 2. 复制到用户的 skills 目录（用第 1 步检测到的目录替换 TARGET_DIR）
+cp -R /tmp/{仓库名}/skills/* {TARGET_DIR}/
 
-# 3. Punk-Skill — 封面图与头像生成
-npx -y skills add adrianpunk/Punk-Skill --all
-
-# 4. Mting-skill — 学习复盘与输出
-npx -y skills add mting0308-ux/Mting-skill --all
-
-# 5. xiaomu_x_creator — X/Twitter 运营工具箱
-npx -y skills add JayceHuang/xiaomu_x_creator --all
-
-# 6. rw-research-skill — 科研全流程
-npx -y skills add rolandwonglonam/rw-research-skill --all
-
-# 7. ssoier-cpp-solution — 信奥题解生成器
-npx -y skills add xiaoxihahaha/ssoier-cpp-solution --all
-
-# 8. codex-orange-block-pet — 橙色方块桌宠
-npx -y skills add GaryLauLGY/codex-orange-block-pet --all
+# 3. 清理临时文件
+rm -rf /tmp/{仓库名}
 ```
+
+8 个 skill 的仓库地址：
+
+| # | Skill | 仓库 URL | 用途 |
+|---|-------|----------|------|
+| 1 | jcm-skill | https://github.com/jinchenma94/jcm-skill.git | 文章写作全流程 |
+| 2 | snail-biaoti-public | https://github.com/dulala567/snail-biaoti-public.git | 标题生成与评分 |
+| 3 | Punk-Skill | https://github.com/adrianpunk/Punk-Skill.git | 封面图/头像生成 |
+| 4 | Mting-skill | https://github.com/mting0308-ux/Mting-skill.git | 学习复盘转内容 |
+| 5 | xiaomu_x_creator | https://github.com/JayceHuang/xiaomu_x_creator.git | X 运营工具箱 |
+| 6 | rw-research-skill | https://github.com/rolandwonglonam/rw-research-skill.git | 科研全流程 |
+| 7 | ssoier-cpp-solution | https://github.com/xiaoxihahaha/ssoier-cpp-solution.git | 信奥题解生成 |
+| 8 | codex-orange-block-pet | https://github.com/GaryLauLGY/codex-orange-block-pet.git | 桌面宠物 |
 
 ### 第 3 步：逐个确认
 
@@ -85,34 +85,19 @@ npx -y skills add GaryLauLGY/codex-orange-block-pet --all
 🎉 全部 8 个 skill 安装完成！重启你的 AI Agent 即可使用。
 ```
 
-## 手动安装备选方案
+## 安装示例
 
-如果 `npx -y skills add` 不可用，改用 git clone 方式：
+假设检测到目标目录是 `~/.codex/skills/`，安装 jcm-skill 的完整命令：
 
 ```bash
-# 以 jcm-skill 为例，其余同理
 git clone https://github.com/jinchenma94/jcm-skill.git /tmp/jcm-skill
-cp -R /tmp/jcm-skill/skills/* ~/.codex/skills/   # Codex
-# 或
-cp -R /tmp/jcm-skill/skills/* ~/.workbuddy/skills/  # WorkBuddy
+cp -R /tmp/jcm-skill/skills/* ~/.codex/skills/
 rm -rf /tmp/jcm-skill
 ```
 
-## 技能清单速览
-
-| # | Skill | 仓库 | 用途 |
-|---|-------|------|------|
-| 1 | jcm-skill | jinchenma94/jcm-skill | 文章写作全流程 |
-| 2 | snail-biaoti-public | dulala567/snail-biaoti-public | 标题生成与评分 |
-| 3 | Punk-Skill | adrianpunk/Punk-Skill | 封面图/头像生成 |
-| 4 | Mting-skill | mting0308-ux/Mting-skill | 学习复盘转内容 |
-| 5 | xiaomu_x_creator | JayceHuang/xiaomu_x_creator | X 运营工具箱 |
-| 6 | rw-research-skill | rolandwonglonam/rw-research-skill | 科研全流程 |
-| 7 | ssoier-cpp-solution | xiaoxihahaha/ssoier-cpp-solution | 信奥题解生成 |
-| 8 | codex-orange-block-pet | GaryLauLGY/codex-orange-block-pet | 桌面宠物 |
-
 ## 注意事项
 
-- 不要跳过检测步骤，直接猜平台可能导致装错目录。
-- 安装失败时优先检查网络和 git/npx 是否可用。
-- 如果用户选择了特定平台，只装到该平台的 skills 目录。
+- 不要用 `npx skills add` 安装——它不认识所有平台目录，可能装错位置。
+- 一定要先检测目录再安装，不要猜平台。
+- Windows 用户用 `cp -R` 时可能需要用 Git Bash 或 WSL。
+- 如果 clone 失败，检查网络连接。
