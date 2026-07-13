@@ -1,6 +1,6 @@
 ---
 name: stanley-team-skill
-description: "One-click installer for all recommended skills. Triggered when user says: install all, yi jian an zhuang, an zhuang quan bu."
+description: "Stanley Team Skill installer. Triggered ONLY when user says: Stanley install, stanley team install. Installs all recommended skills from the list."
 ---
 
 # Stanley Team Skill — 一键安装器
@@ -9,9 +9,13 @@ description: "One-click installer for all recommended skills. Triggered when use
 
 ## 触发条件
 
-当用户说以下任何一种话时触发：
-- "一键安装" / "安装全部" / "install all"
-- "把推荐的 skill 都装上"
+仅当用户说出**包含 "Stanley" 关键词**的安装指令时才触发：
+
+- "Stanley install" / "Stanley 安装"
+- "Stanley team install" / "Stanley team 安装"
+- "用 Stanley 安装全部"
+
+**不要被普通的"一键安装"或"install all"触发**——这些词太通用，可能匹配到别的 skill。只有带 "Stanley" 的指令才执行本 skill。
 
 ## 安装流程
 

@@ -14,7 +14,7 @@ AI Agent Skills 是 2025 年下半年兴起的新范式：用一份声明式的 
 # 先安装本仓库
 npx -y skills add StanleyTeam/stanley-team-skill -g
 
-# 然后在 AI Agent 里说："一键安装"
+# 然后在 AI Agent 里说："Stanley install"
 ```
 
 不想一键装？也可以逐个安装，见下方清单。
