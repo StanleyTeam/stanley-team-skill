@@ -41,28 +41,28 @@ ls ~/.agents/skills/ 2>/dev/null && echo "AGENTS_FOUND"
 
 ```bash
 # 1. jcm-skill — 文章写作辅助
-npx -y skills add jinchenma94/jcm-skill --all --copy
+npx -y skills add jinchenma94/jcm-skill -g --all --copy
 
 # 2. snail-biaoti-public — 标题生成与评分
-npx -y skills add dulala567/snail-biaoti-public --all --copy
+npx -y skills add dulala567/snail-biaoti-public -g --all --copy
 
 # 3. Punk-Skill — 封面图与头像生成
-npx -y skills add adrianpunk/Punk-Skill --all --copy
+npx -y skills add adrianpunk/Punk-Skill -g --all --copy
 
 # 4. Mting-skill — 学习复盘与输出
-npx -y skills add mting0308-ux/Mting-skill --all --copy
+npx -y skills add mting0308-ux/Mting-skill -g --all --copy
 
 # 5. xiaomu_x_creator — X/Twitter 运营工具箱
-npx -y skills add JayceHuang/xiaomu_x_creator --all --copy
+npx -y skills add JayceHuang/xiaomu_x_creator -g --all --copy
 
 # 6. rw-research-skill — 科研全流程
-npx -y skills add rolandwonglonam/rw-research-skill --all --copy
+npx -y skills add rolandwonglonam/rw-research-skill -g --all --copy
 
 # 7. ssoier-cpp-solution — 信奥题解生成器
-npx -y skills add xiaoxihahaha/ssoier-cpp-solution --all --copy
+npx -y skills add xiaoxihahaha/ssoier-cpp-solution -g --all --copy
 
 # 8. codex-orange-block-pet — 橙色方块桌宠
-npx -y skills add GaryLauLGY/codex-orange-block-pet --all --copy
+npx -y skills add GaryLauLGY/codex-orange-block-pet -g --all --copy
 ```
 
 8 个 skill 的仓库地址：
@@ -103,12 +103,12 @@ npx -y skills add GaryLauLGY/codex-orange-block-pet --all --copy
 假设检测到目标目录是 `~/.codex/skills/`，安装 jcm-skill 的完整命令：
 
 ```bash
-npx -y skills add jinchenma94/jcm-skill --all --copy
+npx -y skills add jinchenma94/jcm-skill -g --all --copy
 ```
 
 ## 注意事项
 
-- 用 `npx -y skills add {作者}/{仓库} --all --copy` 逐个安装。
+- 用 `npx -y skills add {作者}/{仓库} -g --all --copy` 逐个安装。
 - 一定要先检测目录再安装，不要猜平台。
 - Windows 用户用 `cp -R` 时可能需要用 Git Bash 或 WSL。
 - 如果 npx 安装失败，检查网络连接。

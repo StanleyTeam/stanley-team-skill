@@ -13,7 +13,7 @@ AI Agent Skills 是 2025 年下半年兴起的新范式：用一份声明式的 
 ### 第一步：安装本仓库
 
 ```bash
-npx -y skills add StanleyTeam/stanley-team-skill --all --copy
+npx -y skills add StanleyTeam/stanley-team-skill -g --all --copy
 ```
 
 ### 第二步：触发安装
