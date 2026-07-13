@@ -16,6 +16,16 @@ AI Agent Skills 是 2025 年下半年兴起的新范式：用一份声明式的 
 npx -y skills add StanleyTeam/stanley-team-skill -g --all --copy
 ```
 
+> 如果你在用 **Codex** 或 **WorkBuddy**，上面的命令不会自动装到它们的目录，需要手动补一步：
+
+```bash
+# Codex
+cp -R ~/.agents/skills/stanley-team-skill ~/.codex/skills/
+
+# WorkBuddy
+cp -R ~/.agents/skills/stanley-team-skill ~/.workbuddy/skills/
+```
+
 ### 第二步：触发安装
 
 重启你的 AI Agent，然后对它说：

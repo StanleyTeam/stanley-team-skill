@@ -65,6 +65,16 @@ npx -y skills add xiaoxihahaha/ssoier-cpp-solution -g --all --copy
 npx -y skills add GaryLauLGY/codex-orange-block-pet -g --all --copy
 ```
 
+**重要：npx 不会自动装到 Codex 和 WorkBuddy 的目录。** 安装完每个 skill 后，检查以下目录，如果缺失则手动补装：
+
+```bash
+# Codex（从 ~/.agents/skills/ 复制到 ~/.codex/skills/）
+cp -R ~/.agents/skills/{skill名称} ~/.codex/skills/
+
+# WorkBuddy（从 ~/.agents/skills/ 复制到 ~/.workbuddy/skills/）
+cp -R ~/.agents/skills/{skill名称} ~/.workbuddy/skills/
+```
+
 8 个 skill 的仓库地址：
 
 | # | Skill | 仓库 URL | 用途 |
